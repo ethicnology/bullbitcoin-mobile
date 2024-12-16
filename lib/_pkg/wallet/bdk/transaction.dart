@@ -269,7 +269,7 @@ class BDKTransactions {
               if (serdBdkTx.output == null) throw 'No output object';
               final scriptPubkeyString = serdBdkTx.output
                   ?.firstWhere(
-                    (output) => output.value == amountChange,
+                    (output) => amountChange == output.value,
                   )
                   .scriptPubkey;
 

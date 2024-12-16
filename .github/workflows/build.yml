@@ -1,23 +1,32 @@
-name: Build
+# name: Build
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build:
-    name: Build APK
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     name: Build APK
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+#     steps:
+#     - name: Checkout Repository
+#       uses: actions/checkout@v4
+    
+#     - uses: dtolnay/rust-toolchain@master
+#       with:
+#         toolchain: nightly
+#         components: llvm-tools-preview
 
-    - name: Setup Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '2.5.3'
+#     - name: Setup Flutter
+#       uses: subosito/flutter-action@v2
+#       with:
+#         channel: stable
+#         flutter-version: 3.24.5
 
-    - name: Build APK
-      run: flutter build apk --release
+#     - name: Generate freezed files
+#       run: dart run build_runner build --delete-conflicting-outputs
+
+#     - name: Build APK
+#       run: flutter build apk --release
